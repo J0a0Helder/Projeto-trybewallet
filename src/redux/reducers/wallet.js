@@ -8,6 +8,8 @@ const initialState = {
   isLoading: false,
 };
 
+export const EXPENSES = 'EXPENSES';
+
 function wallet(state = initialState, { type, payload }) {
   switch (type) {
   case REQUEST_API:
@@ -20,6 +22,11 @@ function wallet(state = initialState, { type, payload }) {
       ...state,
       isLoading: false,
       currencies: payload,
+    };
+  case EXPENSES:
+    return {
+      ...state,
+      expenses: payload,
     };
   default:
     return state;
