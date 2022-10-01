@@ -26,7 +26,7 @@ function wallet(state = initialState, { type, payload }) {
   case EXPENSES:
     return {
       ...state,
-      expenses: payload,
+      expenses: [...state.expenses, payload],
     };
   default:
     return state;
