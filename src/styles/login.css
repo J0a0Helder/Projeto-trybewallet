@@ -1,0 +1,108 @@
+/* estilização feita pr esse video:
+https://www.youtube.com/watch?v=69-WfrVBli8&ab_channel=Markzuel
+
+site usado para pegar o logo: https://storyset.com/ */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.main-login {
+  align-items: center;
+  background: #292238;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+.left-login {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 50vw;
+}
+
+.left-login > h1 {
+  color: #58fcaf;
+  font-size: 3vw;
+}
+
+.login-img {
+  width: 35vw;
+}
+
+.right-login {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 50vw;
+}
+
+.card-login {
+  align-items: center;
+  background: #2f2841;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px #00000056;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 30px 35px;
+  width: 60%;
+}
+
+.card-login > h1 {
+  color: #0f8;
+  font-weight: 800;
+  margin: 0;
+}
+
+.text-field {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.text-field > input {
+  background: #514869;
+  border-radius: 10px;
+  box-shadow: 0 10px 40px #00000056;
+  box-sizing: border-box;
+  color: #f0ffffde;
+  font-size: 12pt;
+  outline: none;
+  padding: 15px;
+  width: 100%;
+}
+
+.text-field > h4 {
+  color: #f0ffffde;
+  margin-bottom: 10px;
+}
+
+.text-field > input::placeholder {
+  color: #f0ffff94;
+}
+
+.btn-login {
+  background: #0f8;
+  border: none;
+  border-radius: 8px;
+  box-shadow: 0 10px 40px -12px #00ff8052;
+  color: #2b134b;
+  cursor: pointer;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin: 25px;
+  outline: none;
+  padding: 16px 0;
+  text-transform: uppercase;
+  width: 100%;
+}
