@@ -1,8 +1,16 @@
+// antes havia usado o index como key, porém uma duvida surgiu no corse e foi explicado que usar o index como key quebraria o código, então refatorei e usei o ID //
+
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import action, { REMOVE_EXPENSES } from '../redux/actions';
 
 class Table extends Component {
+  removeExpenses = (expense) => {
+    const { dispatch } = this.props;
+    dispatch(action(REMOVE_EXPENSES, expense));
+  };
+
   render() {
     const { expenses } = this.props;
     return (
@@ -22,8 +30,9 @@ class Table extends Component {
             </tr>
           </thead>
           <tbody>
-            { expenses.map((element, index) => {
+            { expenses.map((element) => {
               const {
+                id,
                 value,
                 description,
                 currency,
@@ -34,7 +43,7 @@ class Table extends Component {
               const converter = exchangeValue * value;
               const currencyName = (exchangeRates[currency].name);
               return (
-                <tr key={ index }>
+                <tr key={ id }>
                   <td>{ description }</td>
                   <td>{ tag }</td>
                   <td>{ method }</td>
@@ -43,6 +52,15 @@ class Table extends Component {
                   <td>{ exchangeValue.toFixed(2) }</td>
                   <td>{ converter.toFixed(2) }</td>
                   <td>Real</td>
+                  <td>
+                    <button
+                      type="button"
+                      data-testid="delete-btn"
+                      onClick={ () => this.removeExpenses(element) }
+                    >
+                      Excluir
+                    </button>
+                  </td>
                 </tr>
               );
             })}

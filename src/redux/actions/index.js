@@ -1,5 +1,6 @@
 export const REQUEST_API = 'REQUEST_API';
 export const GET_CURRENCIES = 'GET_CURRENCIES';
+export const REMOVE_EXPENSES = 'REMOVE_EXPENSES';
 
 export const requestAPI = () => ({ type: REQUEST_API });
 

@@ -1,4 +1,4 @@
-import { REQUEST_API, GET_CURRENCIES } from '../actions';
+import { REQUEST_API, GET_CURRENCIES, REMOVE_EXPENSES } from '../actions';
 
 const initialState = {
   currencies: [], // array de string
@@ -27,6 +27,12 @@ function wallet(state = initialState, { type, payload }) {
     return {
       ...state,
       expenses: [...state.expenses, payload],
+    };
+  case REMOVE_EXPENSES:
+    return {
+      ...state,
+      expenses: state.expenses
+        .filter((expense) => expense.id !== payload.id),
     };
   default:
     return state;
