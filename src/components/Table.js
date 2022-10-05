@@ -3,12 +3,17 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import action, { REMOVE_EXPENSES } from '../redux/actions';
+import action, { REMOVE_EXPENSES, EDIT_EXPENSES } from '../redux/actions';
 
 class Table extends Component {
   removeExpenses = (expense) => {
     const { dispatch } = this.props;
     dispatch(action(REMOVE_EXPENSES, expense));
+  };
+
+  editExpenses = (expense) => {
+    const { dispatch } = this.props;
+    dispatch(action(EDIT_EXPENSES, expense));
   };
 
   render() {
@@ -53,6 +58,13 @@ class Table extends Component {
                   <td>{ converter.toFixed(2) }</td>
                   <td>Real</td>
                   <td>
+                    <button
+                      type="button"
+                      data-testid="edit-btn"
+                      onClick={ () => this.editExpenses(element.id) }
+                    >
+                      Editar
+                    </button>
                     <button
                       type="button"
                       data-testid="delete-btn"

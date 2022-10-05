@@ -1,4 +1,9 @@
-import { REQUEST_API, GET_CURRENCIES, REMOVE_EXPENSES } from '../actions';
+import {
+  REQUEST_API,
+  GET_CURRENCIES,
+  REMOVE_EXPENSES,
+  EDIT_EXPENSES,
+  EDITED_EXPENSES } from '../actions';
 
 const initialState = {
   currencies: [], // array de string
@@ -33,6 +38,28 @@ function wallet(state = initialState, { type, payload }) {
       ...state,
       expenses: state.expenses
         .filter((expense) => expense.id !== payload.id),
+    };
+  case EDIT_EXPENSES:
+    return {
+      ...state,
+      editor: true,
+      idToEdit: payload,
+    };
+  case EDITED_EXPENSES:
+    return {
+      ...state,
+      editor: false,
+      expenses: state.expenses
+        .map((expense) => {
+          if (expense.id === state.idToEdit) {
+            return {
+              id: expense.id,
+              ...payload,
+              exchangeRates: expense.exchangeRates,
+            };
+          }
+          return expense;
+        }),
     };
   default:
     return state;
