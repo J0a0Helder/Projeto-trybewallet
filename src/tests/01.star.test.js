@@ -4,7 +4,7 @@ import userEvent from '@testing-library/user-event';
 import App from '../App';
 import { renderWithRouterAndRedux } from './helpers/renderWith';
 
-describe('implementa os testes do componente "App"', () => {
+describe('implementa os testes da pagina "login"', () => {
   it('deve renderizar corretamente a pagina login', () => {
     const { history } = renderWithRouterAndRedux(<App />);
 
@@ -25,20 +25,5 @@ describe('implementa os testes do componente "App"', () => {
     userEvent.click(homeButton);
 
     expect(history.location.pathname).toBe('/carteira');
-  });
-
-  it('deve renderizar corretamente a pagina carteira', () => {
-    const { history } = renderWithRouterAndRedux(<App />, { initialEntries: ['/carteira'] });
-
-    const { pathname } = history.location;
-    expect(pathname).toBe('/carteira');
-
-    const addExpensesButton = screen.getByRole('button', { name: /adicionar despesa/i });
-    expect(addExpensesButton).toBeInTheDocument();
-
-    const inputs = screen.getByRole('combobox', {
-      name: /moeda: método de pagamento: dinheiro tag: alimentação/i,
-    });
-    expect(inputs).toBeInTheDocument();
   });
 });
