@@ -134,7 +134,6 @@ class WalletForm extends Component {
                 type="button"
                 onClick={ this.handleEdit }
                 data-testid="add-expense"
-                disabled={ description === '' || value === '' }
                 className="button"
               >
                 Editar despesa
