@@ -4,6 +4,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import action, { REMOVE_EXPENSES, EDIT_EXPENSES } from '../redux/actions';
+import '../styles/table.css';
 
 class Table extends Component {
   removeExpenses = (expense) => {

@@ -1,0 +1,31 @@
+/* vídeo que serviu de inspiração:
+https://www.youtube.com/watch?v=gFYvowjTJMI&ab_channel=NodeStudioTreinamentos */
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.cabecalho {
+  background-color: #2f2841;
+  float: left;
+  padding: 20px 8%;
+  width: 100%;
+}
+
+.logo a {
+  background: url('./walletHeader.png') no-repeat;
+  float: left;
+  font-size: 0;
+  height: 48px;
+  width: 221px;
+}
+
+.cabecalho div {
+  float: right;
+  width: 30%;
+}
+
+h4 {
+  color: white;
+}

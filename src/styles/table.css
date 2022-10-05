@@ -1,0 +1,19 @@
+/* vídeo que serviu de inspiração:
+https://www.youtube.com/watch?v=TCh8qgSp1KY&ab_channel=EdiCursos */
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+table , th , td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+
+th , td {
+  padding: 5px 10px;
+}
+
+th {
+  background-color: #58fcaf;
+}
