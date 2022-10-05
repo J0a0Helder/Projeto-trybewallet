@@ -26,7 +26,7 @@ class Header extends Component {
           <h4 data-testid="email-field">{ ` Email: ${user.email}` }</h4>
         </div>
         <div>
-          <h4 data-testid="total-field">{`Total: ${this.totalExpenses()}` }</h4>
+          <h4 data-testid="total-field">{ this.totalExpenses() }</h4>
           <h4 data-testid="header-currency-field">BRL</h4>
         </div>
       </header>

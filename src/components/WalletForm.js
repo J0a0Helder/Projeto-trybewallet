@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 import action, { EDITED_EXPENSES } from '../redux/actions';
 import { EXPENSES } from '../redux/reducers/wallet';
 import { exchangeApi } from '../services/getexchangeRates';
+import '../styles/form.css';
 
 class WalletForm extends Component {
   state = {
@@ -58,7 +59,7 @@ class WalletForm extends Component {
     const pagamentos = ['Dinheiro', 'Cartão de crédito', 'Cartão de débito'];
     const descricao = ['Alimentação', 'Lazer', 'Trabalho', 'Transporte', 'Saúde'];
     return (
-      <div>
+      <div className="campo">
         <label htmlFor="Valor">
           Valor:
           {' '}
@@ -134,6 +135,7 @@ class WalletForm extends Component {
                 onClick={ this.handleEdit }
                 data-testid="add-expense"
                 disabled={ description === '' || value === '' }
+                className="button"
               >
                 Editar despesa
 
@@ -143,6 +145,7 @@ class WalletForm extends Component {
                 type="button"
                 onClick={ this.handleClick }
                 disabled={ description === '' || value === '' }
+                className="button"
               >
                 Adicionar despesa
               </button>

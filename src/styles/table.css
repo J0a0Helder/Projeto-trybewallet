@@ -8,6 +8,7 @@ https://www.youtube.com/watch?v=TCh8qgSp1KY&ab_channel=EdiCursos */
 table , th , td {
   border: 1px solid black;
   border-collapse: collapse;
+  margin-left: 0.5em;
 }
 
 th , td {
@@ -16,4 +17,23 @@ th , td {
 
 th {
   background-color: #58fcaf;
+}
+
+.edit-btn {
+  background-color: rgb(75, 200, 138);
+  border: none;
+  color: rgb(22, 58, 40);
+  cursor: pointer;
+  padding: 4px;
+  text-transform: uppercase;
+}
+
+.delete-btn {
+  background-color: rgb(200, 75, 75);
+  border: none;
+  color: rgb(58, 22, 22);
+  cursor: pointer;
+  margin-left: 0.1em;
+  padding: 4px;
+  text-transform: uppercase;
 }

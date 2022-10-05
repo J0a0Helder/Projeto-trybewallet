@@ -63,6 +63,7 @@ class Table extends Component {
                       type="button"
                       data-testid="edit-btn"
                       onClick={ () => this.editExpenses(element.id) }
+                      className="edit-btn"
                     >
                       Editar
                     </button>
@@ -70,6 +71,7 @@ class Table extends Component {
                       type="button"
                       data-testid="delete-btn"
                       onClick={ () => this.removeExpenses(element) }
+                      className="delete-btn"
                     >
                       Excluir
                     </button>
